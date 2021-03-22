@@ -1,0 +1,34 @@
+{
+  "name": "plify-website",
+  "version": "1.0.0",
+  "description": "website for plify",
+  "main": "index.js",
+  "scripts": {
+    "dev": "eleventy --serve",
+    "build": "eleventy"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/nairraf/plify-website.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/nairraf/plify-website/issues"
+  },
+  "homepage": "https://github.com/nairraf/plify-website#readme",
+  "devDependencies": {
+    "@11ty/eleventy": "^0.12.1",
+    "@11ty/eleventy-img": "^0.8.2",
+    "cssnano": "^4.1.10",
+    "html-minifier": "^4.0.0",
+    "inline-source": "^7.2.0",
+    "postcss": "^8.2.8",
+    "postcss-advanced-variables": "^3.0.1",
+    "postcss-nested": "^5.0.5",
+    "postcss-scss": "^3.0.5",
+    "rollup": "^2.42.3",
+    "rollup-plugin-terser": "^7.0.2"
+  }
+}

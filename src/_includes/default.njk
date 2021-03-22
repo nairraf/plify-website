@@ -1,0 +1,11 @@
+{% include "partials/htmlhead.njk" %}
+
+<p id="demo"></p>
+
+<main>
+{% block content %}
+    {{ content | safe }}
+{% endblock %}
+</main>
+
+{% include "partials/htmlfoot.njk" %}

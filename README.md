@@ -1,2 +1,2 @@
 # plify-website
-website for plify
+eleventy sources for the main plify website
