@@ -38,7 +38,9 @@ module.exports = eleventyConfig => {
     
     // transforms
     //      Compile SCSS
-    eleventyConfig.addTransform('postcss', require('./lib/transforms/postcss'));
+    //      uncomment only one of the scss compilers below, your choice of postcss or sass
+    //eleventyConfig.addTransform('postcss', require('./lib/transforms/postcss'));
+    eleventyConfig.addTransform('sass', require('./lib/transforms/sass'));
     //      minify HTML
     eleventyConfig.addTransform('htmlminify', require('./lib/transforms/htmlminify'));
     //      inline assets
