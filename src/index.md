@@ -4,7 +4,7 @@ description: plify manages your hyper-v environments to easily create and sychro
 layout: default.njk
 eleventyNavigation:
     key: Home
-    order: 2
+    order: 1
 ---
 # Hello World
 

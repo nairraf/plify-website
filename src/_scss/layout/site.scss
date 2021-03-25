@@ -4,11 +4,11 @@ body {
 }
 
 a.dropdown-item:hover  {
-    background-color: #000;
+    background-color: var(--dark);
 }
 
 a.dropdown-item.active {
-    background-color: #000;
+    background-color:var(--dark);
 }
 
 nav.navbar {

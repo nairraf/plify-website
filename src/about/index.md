@@ -4,7 +4,7 @@ description: Meet the Plify Team
 layout: default.njk
 eleventyNavigation:
     key: About Us
-    order: 1
+    order: 2
     menu: About
 ---
 # About Us
