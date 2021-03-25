@@ -1,0 +1,26 @@
+{% set navPages = collections.all | eleventyNavigation %}
+{% macro renderNavListItem(entry, child=false) -%}
+    {% if child %}
+        <a class="dropdown-item {{ 'active' if entry.url == page.url }} text-light" href="{{ entry.url | url }}">{{ entry.title }}</a>
+    {% else %}
+        {% if not entry.children.length %}
+            <li class="nav-item {{ 'active' if entry.url == page.url }}">
+                <a class="nav-link" href="{{ entry.url | url }}">{{ entry.title }}</a>
+            </li>
+        {% else %}
+            {% set menulower = entry.menu | lower %}
+            {% set pagelower = page.url | lower %}
+            <li class="nav-item dropdown">
+                <a class="nav-link dropdown-toggle {{ 'active' if menulower in pagelower }}" href="#" data-toggle="dropdown">{{ entry.menu }}</a>
+                <div class="dropdown-menu bg-dark">
+                    <a class="dropdown-item {{ 'active' if entry.url == page.url }} text-light" href="{{ entry.url | url }}">{{ entry.title }}</a>
+                    {%- for childEntry in entry.children %}{{ renderNavListItem(childEntry, child=true) }}{% endfor -%}
+                </div>
+            </li>
+        {% endif %}
+    {% endif %}
+{%- endmacro %}
+
+{%- for entry in navPages %}
+    {{ renderNavListItem(entry) }}
+{%- endfor -%}

@@ -1,8 +1,11 @@
-// npm install @11ty/eleventy-img --save-dev
-// image optimization
 const 
+    // npm install @11ty/eleventy-img --save-dev
+    // image optimization
     Image = require("@11ty/eleventy-img")
-    dev = global.dev = (process.env.ELEVENTY_ENV === 'development');
+    // detect development environments
+    dev = global.dev = (process.env.ELEVENTY_ENV === 'development')
+    // npm install @11ty/eleventy-navigation --save-dev
+    eleventyNavigationPlugin = require("@11ty/eleventy-navigation");
 
 async function imageShortcode(src, alt, sizes) {
     let metadata = await Image(src, {
@@ -27,6 +30,9 @@ async function imageShortcode(src, alt, sizes) {
 
 // 11ty config
 module.exports = eleventyConfig => {
+    // plugins
+    eleventyConfig.addPlugin(eleventyNavigationPlugin);
+    
     // shortcodes
     //  {% image "./src/images/cat.jpg", "photo of my cat" %}
     //  {% image "./src/images/cat.jpg", "photo of my cat", "(min-width: 30em) 50vw, 100vw" %}
